@@ -8,9 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import UmaSangada.PageObjects.CartPage;
-import UmaSangada.PageObjects.OrderPage;
+import org.uma.web.pages.CartPage;
+import org.uma.web.pages.OrderPage;
 
 public class AbstractComponents 
 {
