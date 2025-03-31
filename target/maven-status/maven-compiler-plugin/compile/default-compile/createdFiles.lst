@@ -1,0 +1,8 @@
+UmaSangada\PageObjects\CheckoutPage.class
+UmaSangada\PageObjects\ProductCatalog.class
+UmaSangada\Resourses\ExtentReportNG.class
+UmaSangada\PageObjects\CartPage.class
+UmaSangada\PageObjects\OrderPage.class
+UmaSangada\AbstractComponents\AbstractComponents.class
+UmaSangada\PageObjects\ConfirmationPage.class
+UmaSangada\PageObjects\LandingPage.class
