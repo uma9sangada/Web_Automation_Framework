@@ -5,16 +5,14 @@ import org.testng.annotations.Test;
 import org.uma.web.base.Web;
 import org.uma.web.pages.ProductCatalog;
 
-import org.uma.web.listners.*;
+import org.uma.web.listners.retry; // Corrected import
 
-public class ErrorValidation extends Web
-{
-	@Test(groups= {"ErrorHandling"},retryAnalyzer=retry.class)
-	public void loginErrorValidation() 
-	{
-		ProductCatalog ProductCatalog = landingpage.EnterCredentials("umasangada@gmail.com", "T@bby23519");
-		landingpage.errormessage();
-		Assert.assertEquals("Incorrect email o password.", landingpage.errormessage());
-		
-	}
+public class ErrorValidation extends Web {
+
+    @Test(groups = { "ErrorHandling" }, retryAnalyzer = retry.class)
+    public void loginErrorValidation() {
+        landingpage.enterCredentials("umasangada@gmail.com", "T@bby23519"); // Removed ProductCatalog assignment
+        String errorMessage = landingpage.errorMessage();
+        Assert.assertEquals("Incorrect email or password.", errorMessage);
+    }
 }

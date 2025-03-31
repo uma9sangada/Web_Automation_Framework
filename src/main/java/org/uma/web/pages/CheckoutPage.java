@@ -1,59 +1,40 @@
 package org.uma.web.pages;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
-import UmaSangada.AbstractComponents.AbstractComponents;
+import org.uma.web.base.Web; // Import the Web class
 
-/**
- * Hello world!
- *
- */
-public class CheckoutPage extends AbstractComponents {
+public class CheckoutPage {
+	
+	  public CheckoutPage() {
+	        PageFactory.initElements(Web.getDriver(), this);
+	    }
 
-	WebDriver driver;
+    @FindBy(xpath = "//button[contains(@class,'ta-item')][2]")
+    WebElement selectCountry; // Corrected variable name
 
-	public CheckoutPage(WebDriver driver)// by default default constructor is called
-	{
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+    @FindBy(css = ".action__submit")
+    WebElement submitButton; // Corrected variable name
 
-	}
+    @FindBy(xpath = "//input[@placeholder='Select Country']")
+    WebElement country;
 
-	@FindBy(xpath = "//button[contains(@class,'ta-item')][2]")
-	WebElement selectcountry;
+    By popDown = By.cssSelector(".ta-results "); // Corrected variable name
 
-	@FindBy(css = ".action__submit")
-	WebElement submitbutton;
+  
 
-	;
+    public void selectCountry(String val) { // Corrected method name
+        Actions actions = new Actions(Web.getDriver());
+        actions.sendKeys(country, val).build().perform();
+       // waitForElementToAppear(popDown);
+        selectCountry.click();
+    }
 
-	@FindBy(xpath = "//input[@placeholder='Select Country']")
-	WebElement country;
-	By popdown = By.cssSelector(".ta-results ");
 
-	public void selectcountry(String val) 
-	{
-		Actions my = new Actions(driver);
-		my.sendKeys(country, val).build().perform();
-		waitForElementToAppear(popdown);
-		selectcountry.click();
-	}
-
-	public ConfirmationPage Submitbutton() 
-	{
-		submitbutton.click();
-		ConfirmationPage confirmationpage = new ConfirmationPage(driver);
-		
-		return confirmationpage;
-	}
 
 }

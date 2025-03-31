@@ -1,62 +1,48 @@
 package org.uma.web.pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import UmaSangada.AbstractComponents.AbstractComponents;
+import org.uma.web.base.Web;
 
-/**
- * Hello world!
- *
- */
-public class LandingPage extends AbstractComponents
-{
-    
-	WebDriver driver ;
-	public LandingPage(WebDriver driver)//by default default constructor is called    
-	{
-		super(driver);
-		this.driver= driver;
-		PageFactory.initElements(driver, this);
-	
-	}
-	//creating page objects for login and screen
-	//WebElement a= driver.findElement(By.id("userEmail"));
-	@FindBy(id="userEmail")
-	WebElement userEmail;
-	@FindBy(id="userPassword")
-	WebElement userPassword;
-	@FindBy(id="login")
-	WebElement login;
-	
-	@FindBy(css="[class*='flyInOut']")
-	WebElement InvalidData;
-	//.ng-tns-c4-2.ng-star-inserted.ng-trigger.ng-trigger-flyInOut.ngx-toastr.toast-error
-	//action methods for page factory web elements
-	public ProductCatalog EnterCredentials(String mail,String password)
-	{
-		userEmail.sendKeys(mail);
-		userPassword.sendKeys(password);
-		login.click();
-		ProductCatalog ProductCatalog = new ProductCatalog(driver);
-		return ProductCatalog ;
-	}
-	
-	public String errormessage()
-	{
-		waitForElementToAppear(InvalidData);
-		
-		return InvalidData.getText();
-	}
-	
-	public void NavigateToWebsiteURL()
-	{
-		driver.get("https://rahulshettyacademy.com/client");
-	}
-	
-	
-	
+public class LandingPage {
+
+    @FindBy(id = "userEmail")
+    WebElement userEmail;
+
+    @FindBy(id = "userPassword")
+    WebElement userPassword;
+
+    @FindBy(id = "login")
+    WebElement login;
+
+    @FindBy(css = "[class*='flyInOut']")
+    WebElement invalidData;
+
+    public LandingPage() {
+        PageFactory.initElements(Web.getDriver(), this);
+    }
+
+    public void enterCredentials(String mail, String password) {
+        userEmail.sendKeys(mail);
+        userPassword.sendKeys(password);
+        login.click();
+    }
+
+    public String errorMessage() {
+        waitForElementToAppear(invalidData);
+        return invalidData.getText();
+    }
+
+    public void navigateToWebsiteURL() {
+        Web.getDriver().get("https://rahulshettyacademy.com/client");
+    }
+
+    public void waitForElementToAppear(WebElement element) {
+        // Implement your wait logic here (e.g., using WebDriverWait)
+        // Example:
+        // WebDriverWait wait = new WebDriverWait(Web.getDriver(), Duration.ofSeconds(10));
+        // wait.until(ExpectedConditions.visibilityOf(element));
+    }
 }

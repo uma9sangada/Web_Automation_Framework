@@ -64,15 +64,7 @@ public class Web {
         return driver;
     }
 
-    @BeforeMethod(alwaysRun = true)
-    public LandingPage LaunchApplication() throws IOException {
-        if(driver == null) {
-            driver = Initializedriver();
-        }
-        landingpage = new LandingPage(driver);
-        landingpage.NavigateToWebsiteURL();
-        return landingpage;
-    }
+    
 
     @AfterMethod(alwaysRun = true)
     public void closebrowse() throws IOException {
