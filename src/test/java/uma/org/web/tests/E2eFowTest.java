@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import org.uma.web.base.BaseTest;
+import org.uma.web.base.Web;
 import org.uma.web.pages.CartPage;
 import org.uma.web.pages.CheckoutPage;
 import org.uma.web.pages.ConfirmationPage;
@@ -16,7 +16,7 @@ import org.uma.web.pages.OrderPage;
 import org.uma.web.pages.ProductCatalog;
 
 
-public class E2eFowTest extends BaseTest
+public class E2eFowTest extends Web
 
 
 {
