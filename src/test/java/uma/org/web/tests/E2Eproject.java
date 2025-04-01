@@ -10,7 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.uma.web.pages.LandingPage;
+import org.uma.web.pageobjects.LandingPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 

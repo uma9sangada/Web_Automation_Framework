@@ -1,4 +1,4 @@
-package org.uma.web.pages;
+package org.uma.web.pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

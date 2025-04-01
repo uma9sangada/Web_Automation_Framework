@@ -3,9 +3,8 @@ package uma.org.web.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.uma.web.base.Web;
-import org.uma.web.pages.ProductCatalog;
-
 import org.uma.web.listners.retry; // Corrected import
+import org.uma.web.pageobjects.ProductCatalog;
 
 public class ErrorValidation extends Web {
 

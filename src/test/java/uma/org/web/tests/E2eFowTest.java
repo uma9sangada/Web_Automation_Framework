@@ -8,11 +8,11 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.uma.web.base.Web;
-import org.uma.web.pages.CartPage;
-import org.uma.web.pages.CheckoutPage;
-import org.uma.web.pages.ConfirmationPage;
-import org.uma.web.pages.OrderPage;
-import org.uma.web.pages.ProductCatalog;
+import org.uma.web.pageobjects.CartPage;
+import org.uma.web.pageobjects.CheckoutPage;
+import org.uma.web.pageobjects.ConfirmationPage;
+import org.uma.web.pageobjects.OrderPage;
+import org.uma.web.pageobjects.ProductCatalog;
 
 public class E2eFowTest extends Web {
 
